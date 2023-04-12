@@ -6,14 +6,13 @@ public class MergeFiles {
             File mergedFile = new File("merged_file.txt");
             mergedFile.createNewFile();
             FileWriter writer = new FileWriter(mergedFile);
+            
             for (String filePath : args) {
                 FileReader reader = new FileReader(filePath);
-
                 int character;
                 while ((character = reader.read()) != -1) {
                     writer.write(character);
                 }
-
                 reader.close();
             }
             writer.close();
